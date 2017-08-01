@@ -16,7 +16,7 @@ public class FileRW {
 
     public void fileW() {
 
-        try (FileWriter fw = new FileWriter("d:/jdbc.txt", false)) {
+        try (FileWriter fw = new FileWriter("f:/jdbc.txt", false)) {
 
             String proba = list.get(0);   ///"Пробный текст для записи";
             fw.write(proba);
@@ -30,11 +30,11 @@ public class FileRW {
     public void queryList(){
         StringBuilder sb = new StringBuilder();
         BufferedReader br = null;
-        String str = null;
+        String str = "";
         list.clear();
 
         try {
-            br = new BufferedReader(new FileReader("D:\\1.txt"));
+            br = new BufferedReader(new FileReader("f:\\1.txt"));
             if ((str = br.readLine()) != null){
                 list.add(str);
             }

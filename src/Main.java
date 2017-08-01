@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class Main {
 
-        public static void main(String[] args) throws SQLException {
+        public static void main(String[] args) throws SQLException, ClassNotFoundException, IllegalAccessException, InstantiationException {
            Connection con = null;
            Statement st = null;
            ResultSet rs = null;
@@ -17,10 +17,12 @@ public class Main {
            fileRW.queryList();
            fileRW.fileW();
 
-           try {
-               /*Driver d = (Driver)*/ Class.forName("org.sqlite.JDBC").newInstance();
+            Class.forName("org.sqlite.JDBC").newInstance();
 
-               String url = fileRW.getList().get(0);   //"jdbc:sqlite:C:\\Users\\Игорь\\Google Диск\\Java\\JDBC\\carShop.db";
+           try {
+               /*Driver d = (Driver)*/ /*Class.forName("org.sqlite.JDBC").newInstance();*/
+
+               String url = fileRW.getList().get(0); // "jdbc:sqlite:f:/CarShop.db"; //"jdbc:sqlite:C:/Users/Мастер/Google Диск/Java/JDBC/CarShop.db";
 
                con = DriverManager.getConnection(url);
 
